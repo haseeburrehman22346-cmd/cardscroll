@@ -21,7 +21,6 @@ const Card = () => {
                     </article>
                 ))}
             </section>
-            
             <div ref={loaderRef} className="col-span-full text-center py-10 mt-4 border-t border-gray-100">
                 {visibleData.length > 0 && loading ? (
                     <div className="flex justify-center items-center py-4">
