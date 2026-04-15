@@ -8,7 +8,7 @@ const useCard = () => {
     const [loading, setLoading] = useState(true);
     const [hasMore, setHasMore] = useState(true);
     const loaderRef = useRef<HTMLDivElement>(null);
-    const itemsPerPage = 20;
+    const itemsPerPage = 6;
     const loadMore = useCallback(() => {
         setLoading(true);
         setTimeout(() => {
