@@ -5,7 +5,9 @@ export interface CardData {
     price: number;
     condition: string;
     image: string;
+}
+export interface State {
+    visibleData: CardData[];
     loading: boolean;
     hasMore: boolean;
-    visibleData: CardData[]
 }
