@@ -21,15 +21,13 @@ const Card = () => {
                     </article>
                 ))}
             </section>
-            
             <div ref={loaderRef} className="col-span-full text-center py-10 mt-4 border-t border-gray-100">
                 {visibleData.length > 0 && loading ? (
                     <div className="flex justify-center items-center py-4">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
-                    </div>
-                ) : !hasMore ? (
-                    <p className="text-gray-400 font-bold text-lg">no need more</p>
-                ) : <div className="h-10"></div>}
+                    </div>):!hasMore?(
+                    <p className="text-gray-400 font-bold text-lg">No more data</p>):
+                    <div className="h-10"></div>}
             </div>
         </main>
     );
