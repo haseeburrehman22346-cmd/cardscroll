@@ -7,7 +7,7 @@ export type Action =
 export const initialState: State = {
     visibleData: [],
     loading: false,
-    hasMore: true,
+    hasMore: true, 
 };
 export function reducer(state: State, action: Action): State {
     switch (action.type) {
