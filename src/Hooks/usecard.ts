@@ -44,7 +44,7 @@ const useCard = () => {
         try {
             const newData = await getCards(currentVisibleCount, itemsPerPage);
             dispatch({ type: 'FETCH_SUCCESS', payload: newData, limit: itemsPerPage });
-        } catch (error) {
+        } catch {
             dispatch({ type: 'FETCH_ERROR' });
         }
     }, [state.loading, state.hasMore]);
@@ -53,7 +53,7 @@ const useCard = () => {
             try {
                 const data = await getCards(0, itemsPerPage);
                 dispatch({ type: 'FETCH_SUCCESS', payload: data, limit: itemsPerPage });
-            } catch (error) {
+            } catch {
                 dispatch({ type: 'FETCH_ERROR' });
             }
         };
@@ -73,6 +73,7 @@ const useCard = () => {
         }
         return () => observer.disconnect();
     }, [state.loading, state.hasMore, fetchNextBatch, state.visibleData.length]);
+
     return {
         visibleData: state.visibleData,
         loading: state.loading,
