@@ -7,9 +7,16 @@ const Card = () => {
         <main className="max-w-6xl mx-auto p-6">
             <h1 className="text-2xl font-bold mb-6">All Ads</h1>
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-                {visibleData.map((item) => (
+                {visibleData.map((item, index) => (
                     <article key={item.id} className="group relative border rounded-2xl shadow-sm overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300">
-                        <Image src={item.image} alt={item.title} className="w-full h-48 object-cover" width={100} height={100} />
+                        <Image 
+                            src={item.image} 
+                            alt={item.title} 
+                            className="w-full h-48 object-cover" 
+                            width={600} 
+                            height={400} 
+                            priority={index < 6}
+                        />
                         <div className="p-5 space-y-3">
                             <div className="flex items-start justify-between">
                                 <h3 className="font-semibold text-lg line-clamp-2 group-hover:text-indigo-600 transition-colors duration-200">{item.title}</h3>

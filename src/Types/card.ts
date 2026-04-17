@@ -5,4 +5,7 @@ export interface CardData {
     price: number;
     condition: string;
     image: string;
+    loading: boolean;
+    hasMore: boolean;
+    visibleData: CardData[]
 }
